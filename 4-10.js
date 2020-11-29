@@ -1,3 +1,10 @@
+const {
+  read
+} = require('fs');
+const {
+  parse
+} = require('path');
+
 function readUserInput(question) {
   const readline = require('readline').createInterface({
     input: process.stdin,
@@ -13,11 +20,12 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
-  const a = await readUserInput("コンピューターが生成した手:")
-  const hand = parseInt(a)
-  switch (hand) {
-    case 0: console.log("グー"); break;
-    case 1: console.log("チョキー"); break;
-    case 2: console.log("パー"); break;
+  do {
+    var a = await readUserInput("正の整数値:");
+    var x = parseInt(a);
+  }while(x <= 0)
+  var i = 1;
+  while (i < x) {
+
   }
 })();

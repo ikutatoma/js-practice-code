@@ -13,11 +13,9 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
-  const a = await readUserInput("コンピューターが生成した手:")
-  const hand = parseInt(a)
-  switch (hand) {
-    case 0: console.log("グー"); break;
-    case 1: console.log("チョキー"); break;
-    case 2: console.log("パー"); break;
-  }
-})();
+  do {
+    const a = await readUserInput("３桁の整数値:");
+    var retry = parseInt(a);
+} while (retry < 100 || retry > 999);
+  console.log(retry + "と入力しましたね。");
+})()
