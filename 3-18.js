@@ -17,4 +17,7 @@ function readUserInput(question) {
   const b = await readUserInput("変数b:");
   const x = parseFloat(a);
   const y = parseFloat(b);
+  if (a < b) {
+    var
+  }
 })();
