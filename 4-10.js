@@ -25,7 +25,11 @@ function readUserInput(question) {
     var x = parseInt(a);
   }while(x <= 0)
   var i = 1;
-  while (i < x) {
+  var factorial = 1;
 
+  while (i <= x) {
+    factorial = i * factorial
+    i++;
   }
+  console.log("１から" + x + "までの積は" + factorial + "です。");
 })();
