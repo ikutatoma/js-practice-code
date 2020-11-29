@@ -1,9 +1,3 @@
-const {
-  read
-} = require('fs');
-const {
-  parse
-} = require('path');
 
 function readUserInput(question) {
   const readline = require('readline').createInterface({

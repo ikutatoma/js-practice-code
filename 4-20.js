@@ -1,10 +1,3 @@
-const {
-  read
-} = require('fs');
-const {
-  parse
-} = require('path');
-
 function readUserInput(question) {
   const readline = require('readline').createInterface({
     input: process.stdin,
@@ -20,10 +13,5 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
-  const a = await readUserInput("整数値:");
-  var n = parseInt(a);
 
-  for (var i = 1; i <= n; i++) {
-    console.log(i + "の２乗は" + (i * i));
-  }
 })();
