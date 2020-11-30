@@ -44,7 +44,7 @@ function readUserInput(question) {
       break;
     } if (sum + t > 1000) {
       console.log("1000点を超えました。");
-      console.log("死後の整数は無視します。");
+      console.log("最後の整数は無視します。");
       break;
     }
     sum += t;
