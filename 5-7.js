@@ -13,5 +13,7 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
+  var a = 10.0;
+  console.log("a = " + a);
 
 })();

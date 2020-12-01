@@ -13,7 +13,15 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
-  var a = 10.0;
-  console.log("a = " + a);
+  console.log("整数値xとyとzの平均値を求めます。");
+  const a = await readUserInput("xの値:");
+  const b = await readUserInput("yの値:");
+  const c = await readUserInput("zの値");
+  const x = Number(a);
+  const y = Number(b);
+  const z = Number(c);
+
+  const ave = (x + y + z) / 3;
+  console.log("xとyとzの平均値は" + ave + "です。");
 
 })();
