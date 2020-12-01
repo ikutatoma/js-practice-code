@@ -13,9 +13,11 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
-  const n = await readUserInput("整数値:");
-  const x = parseInt(n);
-
-  console.log("8進数では"(x).toString(8) + "です。");
-  console.log("16進数では"(x).toString(16) + "です。");
+  console.log("変数xはfloat型で、変数yはdouble型です。");
+  const a = await readUserInput("x:");
+  const b = await readUserInput("y:");
+  const x = parseFloat(a);
+  const y = Number(b);
+  console.log("x = " + x);
+  console.log("y = " + y);
 })();
