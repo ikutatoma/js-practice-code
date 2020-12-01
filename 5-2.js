@@ -13,18 +13,9 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
-  const a = await readUserInput("何個表示させますか:")
-  const n = parseInt(a);
-  if (n > 0) {
-    var i = 0;
-    while (i < n) {
-      if (i % 2 == 0) {
-        process.stdout.write('*');
-      }
-      else {
-         process.stdout.write('+');
-      }
-      i ++
-    }
-  }
+  const n = await readUserInput("整数値:");
+  const x = parseInt(n);
+
+  console.log("8進数では"(x).toString(8) + "です。");
+  console.log("16進数では"(x).toString(16) + "です。");
 })();

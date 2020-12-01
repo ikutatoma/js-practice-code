@@ -13,18 +13,10 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
-  const a = await readUserInput("何個表示させますか:")
-  const n = parseInt(a);
-  if (n > 0) {
-    var i = 0;
-    while (i < n) {
-      if (i % 2 == 0) {
-        process.stdout.write('*');
-      }
-      else {
-         process.stdout.write('+');
-      }
-      i ++
-    }
-  }
+  const a = parseInt(12, 8);
+  const b = parseInt(12, 10);
+  const c = parseInt(12, 16);
+  console.log("8進数の12は10進数で" + parseInt(a, 10) + "です。");
+  console.log("10進数の12は10進数で" + parseInt(b, 10) + "です。");
+  console.log("16進数の12は10進数で" + parseInt(c, 10) + "です。");
 })();

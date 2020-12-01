@@ -1,5 +1,3 @@
-const { Console } = require('console');
-
 function readUserInput(question) {
   const readline = require('readline').createInterface({
     input: process.stdin,
