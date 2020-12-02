@@ -27,7 +27,6 @@ function readUserInput(question) {
     }
   }
   if (n >= 1) {
-    process.stdout.write(a[i]);
+    console.log(a[n - 1] + "}");
   }
-  process.stdout.write("}");
 })();
