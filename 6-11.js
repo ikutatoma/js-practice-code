@@ -14,24 +14,22 @@ function readUserInput(question) {
 // メイン処理
 (async function main() {
   var n = 0;
+  var a = new Array();
   do {
     const x = await readUserInput("要素数:");
     n = parseInt(x);
-    var a = new Array();
   } while (n > 10);
-  for (var i = 0; i < n; i++){
+
+  var max = 10;
+  var min = 1;
+  a[0] = Math.floor(Math.random() * (max + 1 - min)) + min;
+  for (var i = 1; i < n; i++) {
     do {
-      var max = 10;
-      var min = 1;
       a[i] = Math.floor(Math.random() * (max + 1 - min)) + min;
-      for (var j = 0; j < i; j++) {
-        if (a[j] == a[i]) {
-          break;
-        }
-      }
-    } while (j < i);
+    } while (a[i] == a[i - 1]);
   }
-  for (var i = 0; i < n; i++){
+
+  for (var i = 0; i < n; i++) {
     console.log("a[" + i + "] = " + a[i]);
   }
 })();
