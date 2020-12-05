@@ -30,7 +30,7 @@ function readUserInput(question) {
 
   console.log("行列aの要素の値を入力せよ。");
   for (var i = 0; i < a_row;i++){
-    var a_ele = await readUserInput("a);
+    var a_ele = await readUserInput("a");
   }
   console.log("行列bの要素の値を入力せよ。");
 
