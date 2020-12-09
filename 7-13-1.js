@@ -13,4 +13,5 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
+
 })();
