@@ -13,29 +13,43 @@
  }
  // メイン処理
  (async function main() {
-   function arrayClone(a) {
-     var c = new Array(a.length);
+   function ArraySrchIdx(a,x) {
+     var count = 0;
      for (var i = 0; i < a.length; i++) {
-       c[i] = a[i];
+       if (a[i] == x) {
+         count++;
+       }
      }
-     return c;
+     var c = new Array(count--);
+     for (var i = a.length - 1; count >= 0;i--){
+       if (a[i] == x) {
+         c[count--] = i;
+       }
+     }
+      return c;
    }
 
    var aa = await readUserInput("要素数: ");
-   var num = parseInt(aa);
-   var x = new Array(num);
+   let num = parseInt(aa);
+   let x = new Array(num);
 
-   for (var i = 0; i < x.length; i++) {
-     var bb = await readUserInput("x[" + i + "] =");
+   for (var i = 0; i < num; i++){
+     var bb = await readUserInput("x[" + i + "] = ");
      x[i] = Number(bb);
-     console.log("確認です。。。。" + "x[" + i + "] = " + x[i]);
    }
 
-   var y =  arrayClone(x);;
+   var cc = await readUserInput("探索する値:");
+   var n = Number(cc);
 
+   let b = ArraySrchIdx(x, n);
 
-   console.log("配列xの複製yを作りました。");
-   for (var i = 0; i < num; i++) {
-     console.log("y[" + i + "] = " + y[i]);
+   if (b.length == 0) {
+     console.log("一致する値はありません。");
+   }
+   else {
+     console.log("一致する値のインデックス");
+     for (var i = 0; i < b.length;i++){
+       console.log(b[i]);
+     }
    }
  })();
