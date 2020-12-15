@@ -13,15 +13,21 @@
  }
  // メイン処理
  (async function main() {
-   function arrayRmvOf(a, idx, n) {
+   function arrayInsOf(a, idx, x) {
      if (n < 0 || idx > a.length) {
        return a;
      } else {
-       var c = new Array(a.length  n);
+       var c = new Array(a.length + 1);
        var i = 0;
-       for (; i < num; i++){
+       for (; i < idx; i++) {
          c[i] = a[i];
        }
+       for (; i < a.length; i++) {
+         c[i + 1] = a[i];
+       }
+       c[idx] = x;
+       return c;
+     }
    }
 
    var aa = await readUserInput("要素数: ");
