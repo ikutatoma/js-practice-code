@@ -18,7 +18,6 @@ function readUserInput(question) {
       this.y = 0.0;
     }
 
-
     getX() {
       return this.x;
     }
