@@ -34,8 +34,11 @@ function readUserInput(question) {
       this.x = x;
       this.y = y;
     }
+    equalTo(c) {//cって何？
+      return x == c.x && y == c.y;
+    }
     toString() {
-      return "(" + x + "," + y + ")";
+      return "(" + x + ", " + y + ")";
     }
   }
 }

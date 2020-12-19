@@ -12,5 +12,26 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
-
+  class Account{
+    constructor(n,num,z) {
+      this.name = n;
+      this.no = num;
+      this.balance = z;
+    }
+    getName() {
+      return this.name;
+    }
+    getNo() {
+      return this.no;
+    }
+    getBalance() {
+      return this.balance;
+    }
+    deposit(k) {
+      this.balance += k;
+    }
+    withdraw(k) {
+      this.balance -= k;
+    }
+}
 })();

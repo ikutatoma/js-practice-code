@@ -83,8 +83,4 @@ function readUserInput(question) {
   printArrayIn(y);
 
 
-
-
-
-
 })();
