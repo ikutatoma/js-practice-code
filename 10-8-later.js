@@ -1,3 +1,10 @@
+const {
+  countReset
+} = require('console');
+const {
+  exitCode
+} = require('process');
+
 function readUserInput(question) {
   const readline = require('readline').createInterface({
     input: process.stdin,
@@ -12,19 +19,5 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
-  class Period{
-    constructor(from,to) {
-      this.from = new Day(from);
-      this.to = new Day(to);
-    }
-    getFrom() {
-      return new day(this.from);
-    }
-    getTo() {
-      return new Day(this.to);;
-    }
-    toString() {
-      return "{" + this.from + "〜" + this.to + "}";
-    }
-}
+  //Date Objectを使う
 })();

@@ -1,3 +1,7 @@
+const {
+  SSL_OP_SSLEAY_080_CLIENT_DH_BUG
+} = require('constants');
+
 function readUserInput(question) {
   const readline = require('readline').createInterface({
     input: process.stdin,
@@ -12,22 +16,37 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
-  class Day {
+  lastYear = 0;
+  class Birthday {
     constructor(year, month, date) {
       this.year = year;
       this.month = month;
-      this.day = date;
+      this.date = date;
     }
+    dayOfWeek() {
+      var y = this.year;
+      var m = this.month;
+
+      if (m == 1 || m == 2) {
+        y--;
+        m += 12;
+      }
+      return parseInt((y + y / 4 - y / 100 + y / 400 + (13 * m + 8) / 5 + this.date) % 7);
+    }
+    toString() {
+      var wd = ["日", "月", "火", "水", "木", "金", "土"];
+      return this.year + "年" + this.month + "月" + this.date + "日(" + wd[this.dayOfWeek()] + ")生まれ";
+    }
+
   }
 
   class Human {
-    constructor(name, height, weight,birthday){
+    constructor(name, height, weight, birthday) {
       this.name = name;
       this.height = height;
-      this.weight = weight
-      this.birthday = new Day(birthday);
+      this.weight = weight;
+      this.birthday = birthday;
     }
-
 
     getName() {
       return this.name;
@@ -37,9 +56,6 @@ function readUserInput(question) {
     }
     getWeight() {
       return this.weight;
-    }
-   getBirthday() {
-      return new Day(this.birthday);
     }
     gainWeight(w) {
       this.weight += w;
@@ -52,18 +68,18 @@ function readUserInput(question) {
       console.log("身長" + this.height + "cm");
       console.log("体重" + this.weight + "kg");
     }
+    getBirthday() {
+      return this.birthday;
+    }
     toString() {
-      return "{" + this.name + ":" + this.height + "cm " + this.weight + "kg " + this.birthday + "生まれ}";
+      return "{" + this.name + ":" + this.height + "cm " + this.weight + "kg" + this.birthday;
     }
   }
 
+  var suzuki = new Human("鈴木二郎", 170, 60, new Birthday(1975, 3, 12));
+  var takada = new Human("高田龍一", 166, 72, new Birthday(1987, 10, 7));
 
-  var suzuki = [new Human("鈴木二郎", 170, 60),new Day(1975,3,12)];
-  var takada = [new Human("高田龍一", 166, 72),new Day(1987,10,7)];
 
-  // console.log(suzuki.getBirthday());
-  console.log(" ");
   console.log("suzuki = " + suzuki);
   console.log("takada = " + takada);
-
-})();
+})()
