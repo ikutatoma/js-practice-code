@@ -12,8 +12,10 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
-  var x = await readUserInput("実数: ");
-  console.log("絶対値:" + Math.abs(x));
-  console.log("平方根:" + Math.sqrt(x));
-  console.log("面積:" + Math.PI * x * x);
+  let Car = require('./12-1');
+  let ExCar = require('./12-1');
+  var car1 = new ExCar("W140", 1885, 1490, 5220, 95.0, new Date(2005, 10, 13));
+
+  car1.move(10, 10);
+  console.log("総走行距離: " + car1.getTotalMileage());
 })();

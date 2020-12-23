@@ -13,10 +13,10 @@ function readUserInput(question) {
 // メイン処理
 (async function main() {
   class Account{
-    constructor(n,num,z) {
-      this.name = n;
-      this.no = num;
-      this.balance = z;
+    constructor(name,no,balance) {
+      this.name = name;
+      this.no = no;
+      this.balance = balance;
     }
     getName() {
       return this.name;
@@ -33,5 +33,6 @@ function readUserInput(question) {
     withdraw(k) {
       this.balance -= k;
     }
-}
+  }
+  module.exports = Account;
 })();

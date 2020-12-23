@@ -25,6 +25,7 @@ function readUserInput(question) {
     constructor(x, y) {
       this.x = x;
       this.y = y;
+      counter++;
       if (x == void 0 || y == void 0) {
         if (x == void 0) {
           this.x = 0;
@@ -32,6 +33,10 @@ function readUserInput(question) {
         if (y == void 0) {
           this.y = 0;
         }
+      }
+      if (counter == todayDate) {
+        console.log("当たり！！");
+        console.log("今日" + counter + "個目の座標が生成されました。");
       }
     }
     getX() {
@@ -47,7 +52,12 @@ function readUserInput(question) {
       return "(" + this.x + "," + this.y + "}";
     }
   }
+  today = new Date();
+  todayDate = today.getDate();
   counter = 0;
-  var aa = new Point2D();
-  console.log(aa);
+
+  for (var i = 0; i < 40; i++){
+    var p = new Point2D();
+    console.log("(" + p.getX() + "," + p.getY() + ")");
+  }
 })();

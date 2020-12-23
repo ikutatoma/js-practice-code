@@ -12,8 +12,7 @@ function readUserInput(question) {
 }
 // メイン処理
 (async function main() {
-  var x = await readUserInput("実数: ");
-  console.log("絶対値:" + Math.abs(x));
-  console.log("平方根:" + Math.sqrt(x));
-  console.log("面積:" + Math.PI * x * x);
+  let ExCar = require('./12-1');
+  var myCar = new ExCar("W140", 1885, 1490, 5220, 95.0, new Date(2005, 10, 13));
+  myCar.putSpec();
 })();
